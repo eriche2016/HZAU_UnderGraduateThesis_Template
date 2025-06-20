@@ -440,7 +440,7 @@
 \newcommand{\whitecoverpage}{ 
   \begin{titlepage}
   \pagecolor{white}
-    % ===== 左上角：分类号 ===
+    % ===== 左上角：分类号 =====
     \begin{textblock*}{5cm}(2cm, 2cm) % {宽度}(左距,上距)
         \raggedright % 左对齐
       \songti \zihao{-4}
