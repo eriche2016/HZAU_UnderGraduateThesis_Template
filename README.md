@@ -1,3 +1,3 @@
-## Working in Progress
+## 【WIP】 华中农业大学本科生毕设latex模版
 
 ## 项目初始化。
