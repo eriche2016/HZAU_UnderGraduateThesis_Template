@@ -378,8 +378,8 @@
         \security
     \end{textblock*}
     
-    \vspace*{-10pt}
-    % 向上移动 10pt，调整页面顶部间距
+    \vspace*{-15pt}
+    % 向上移动 15pt，调整页面顶部间距
   
     \vspace*{2\ccwd}
     % 添加 2 个汉字宽度的垂直间距
@@ -387,7 +387,7 @@
     \centering
     \includegraphics[width=0.8\textwidth]{HZAU.png}
     % 插入校徽图片，文件名为 `HZAU.png`
-    \quad \quad \quad
+    % \quad \quad \quad
     % 添加一些水平间距
     
     \centering
@@ -397,7 +397,7 @@
     \centering
     \zihao{2}\textbf{\songti{BACHELOR'S THESIS}}
     
-    \vspace{1cm}
+    \vspace{0.6cm}
     % 添加 0.6cm 的垂直间距
   
     \zihao{-2}\textbf{\heiti\thesisTitleC}
@@ -411,27 +411,28 @@
   
  % 设置行距为 1.5 倍
     
-        \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:}}{\yourName}
+        \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:\quad \quad \quad}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
-        
-        \infobox{ \zihao{-3}\songti{NAME:}}{\yourName}
+        \vspace{-0.2cm}
+        \infobox{ \zihao{-3}\songti{NAME:\quad \quad \quad \quad}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
 
-        \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:}}{\studentID}
+        \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:\quad \quad  \enskip \enskip}}{\studentID}
+        \vspace{-0.2cm}
         % 生成“学号”信息框，内容为 `\studentID`
 
-         \infobox{ \zihao{-3}\songti{STUDENT NO.:}}{\studentID}
+         \infobox{ \zihao{-3}\songti{STUDENT NO.:\;}}{\studentID}
         % 生成“学号”信息框，内容为 `\studentID`
         
-        \infobox{ \zihao{-3}\songti{专\hphantom{空白}业:}}{\yourMajor}
+        \infobox{ \zihao{-3}\songti{专\hphantom{空白}业:\quad \quad \quad }}{\yourMajor}
+        \vspace{-0.2cm}
+        % 生成“专业”信息框，内容为 `\yourMajor`
+        \infobox{ \zihao{-3}\songti{MAJOR:\quad \quad \quad \enskip}}{\yourMajor}
         % 生成“专业”信息框，内容为 `\yourMajor`
         
-        \infobox{ \zihao{-3}\songti{MAJOR:}}{\yourMajor}
-        % 生成“专业”信息框，内容为 `\yourMajor`
-        
-        \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:}}{\yourMentor \yourjob}
-
-        \infobox{ \zihao{-3}\songti{SUPERVISOR:}}{\yourMentor \yourjob}
+        \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:\quad \quad \quad}}{\yourMentor \yourjob}
+        \vspace{-0.2cm}
+        \infobox{ \zihao{-3}\songti{SUPERVISOR: \enskip}}{\yourMentor \yourjob}
 
 
         % 生成“专业”信息框，内容为 `\yourMajor`
@@ -440,7 +441,7 @@
 
     \end{spacing}
   
-    \vspace{3cm}
+    \vspace{0.6cm}
     % 添加 3cm 的垂直间距
     
      \centering \zihao{4}\songti{中国 \quad  武汉}
@@ -491,7 +492,7 @@
     % 添加一些水平间距
     
     \centering
-    \zihao{-2}\textbf{\songti{华中农业大学学士学位论文}}
+    \zihao{-2}\songti{华中农业大学学士学位论文}
     % 设置标题为“本科毕业论文”，字体为小初号宋体加粗
     \vspace{1cm}
     % 添加 0.6cm 的垂直间距
@@ -508,19 +509,19 @@
   
  % 设置行距为 1.5 倍
     
-        \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:}}{\yourName}
+        \infobox{ \mdseries\zihao{-3}\songti{姓\hphantom{空白}名:}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
 
-        \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:}}{\studentID}
+        \infobox{ \mdseries \zihao{-3}\songti{学\hphantom{空白}号:}}{\studentID}
         % 生成“学号”信息框，内容为 `\studentID`
         
-        \infobox{ \zihao{-3}\songti{专业班级:}}{\yourClass}
+        \infobox{ \mdseries\zihao{-3}\songti{专业班级:}}{\yourClass}
         % 生成“专业”信息框，内容为 `\yourMajor`
 
-        \infobox{ \zihao{-3}\songti{学位类型:}}{\yourDegree}
+        \infobox{ \mdseries\zihao{-3}\songti{学位类型:}}{\yourDegree}
         % 生成“专业”信息框，内容为 `\yourMajor`
         
-        \infobox{ \zihao{-3}\songti{指导教师
+        \infobox{ \mdseries\zihao{-3}\songti{指导教师
 :}}{\yourMentor \yourjob}
 
     \end{spacing}
