@@ -16,8 +16,10 @@
 % 设置纸张格式
 \RequirePackage[
   a4paper,
-  left=2.4cm,right=2.4cm,top=2.4cm,bottom=2.4cm,%页面设置：页边距上下左右各用2.4cm。
-  headsep=0.3cm]{geometry}
+  inner=3.2cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,%页面设置：页边距上下左右各用2.5cm。
+  headheight=1.5cm,   % 页眉高度
+  headsep=0.5cm,      % 页眉与正文之间的距离
+  footskip=1.75cm,]{geometry}
 \setlength{\headsep}{0.6cm}
 
 \RequirePackage{amsthm,amsmath,amssymb,indentfirst,booktabs,multicol,multirow,xcolor,graphicx,fancyhdr,hologo,array,hyperref}
@@ -227,20 +229,20 @@
 \newcommand{\sectionbreak}{\clearpage} % 每章节清页面
 
 % 一级标题格式
-\titleformat{\section}[block]{\vspace*{-10pt} \zihao{4} \heiti}
+\titleformat{\section}[block]{\vspace*{-10pt} \zihao{3} \heiti}
 {\thesection~~}{0pt}{\vspace{8pt}} % 1
 
 % 二级标题格式
-\titleformat{\subsection}{\zihao{-4} \heiti}
+\titleformat{\subsection}{\zihao{-3} \heiti}
 {
 \thesubsection~~}{0pt}{}  %1.1
 
 % 三级标题格式
-\titleformat{\subsubsection}{\zihao{-4} \heiti}
+\titleformat{\subsubsection}{\zihao{4} \heiti}
 {\thesubsubsection~~}{0pt}{}  %1.1.1
 
 % 四级标题格式
-\titleformat{\paragraph}[block]{\zihao{-4} \heiti} % 使用 [block] 模式
+\titleformat{\paragraph}[block]{\zihao{4} \songti} % 使用 [block] 模式
 {\theparagraph~~}{0pt}{}  % 1.1.1.1
 
 \setcounter{secnumdepth}{4} % 设置标题编号深度为 4（包括 paragraph）
@@ -335,6 +337,13 @@
 \newcommand{\infobox}[2]{
     \hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{1pt}{\makebox[8cm][c]{#2}}}}
 }
+\newcommand{\dualinfobox}[4]{%
+    \hspace{2.4cm} % 左侧缩进
+    \begin{tabular}{@{}l@{}} % 无左边距，左对齐
+        \zihao{-3}\songti #1: \underline{#2} \\
+        \zihao{-3}\songti #3: \underline{#4} \\
+    \end{tabular}%
+}
 % 定义一个名为 `infobox` 的命令，用于生成带下划线的信息框
 % 参数：
 % `#1` 信息框的标签（如“学院”、“专业”等）
@@ -382,8 +391,12 @@
     % 添加一些水平间距
     
     \centering
-    \zihao{-0}\textbf{\songti{本科毕业论文}}
+    \zihao{0}\textbf{\songti{学士学位论文}}
     % 设置标题为“本科毕业论文”，字体为小初号宋体加粗
+    
+    \centering
+    \zihao{2}\textbf{\songti{BACHELOR'S THESIS}}
+    
     \vspace{1cm}
     % 添加 0.6cm 的垂直间距
   
@@ -400,14 +413,27 @@
     
         \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
+        
+        \infobox{ \zihao{-3}\songti{NAME:}}{\yourName}
+        % 生成“姓名”信息框，内容为 `\yourName`
 
         \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:}}{\studentID}
+        % 生成“学号”信息框，内容为 `\studentID`
+
+         \infobox{ \zihao{-3}\songti{STUDENT NO.:}}{\studentID}
         % 生成“学号”信息框，内容为 `\studentID`
         
         \infobox{ \zihao{-3}\songti{专\hphantom{空白}业:}}{\yourMajor}
         % 生成“专业”信息框，内容为 `\yourMajor`
         
+        \infobox{ \zihao{-3}\songti{MAJOR:}}{\yourMajor}
+        % 生成“专业”信息框，内容为 `\yourMajor`
+        
         \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:}}{\yourMentor \yourjob}
+
+        \infobox{ \zihao{-3}\songti{SUPERVISOR:}}{\yourMentor \yourjob}
+
+
         % 生成“专业”信息框，内容为 `\yourMajor`
         % 生成“职称”信息框，内容为 `\yourjob`
         % 生成“指导教师”信息框，内容为 `\yourMentor`

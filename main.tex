@@ -32,6 +32,19 @@
   morestring=[b]"
 }
 
+%%%%%%%%%%%%%%%%
+% 让 figure 编号按 section 分级（格式：Figure 1-1, 1-2, ...）
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\usepackage{bicaption} % 支持双标题
+% 设置中英文标题分隔符（默认为换行）
+\DeclareCaptionOption{separator}{\def\captionseparator{#1}}
+\captionsetup[bi-first]{name=图} % 中文"图"代替"Figure"
+\captionsetup[bi-second]{name=Figure}
+% 设置表格中英文标题格式
+\captionsetup[table][bi-first]{name=表} % 中文"表"代替"Table"
+\captionsetup[table][bi-second]{name=Table}
+
 
 
 %%%%%%%%%%%%%%%请在这里填写你的论文题目
@@ -143,20 +156,19 @@ LaTeX 的成功离不开全球用户和开发者的支持。许多宏包和工�
 \paragraph{未来的方向}
 随着技术的发展，LaTeX 仍在不断进化。新的工具和集成环境（如 Overleaf）使得 LaTeX 更加易于使用，同时也保持了其高质量排版的核心优势。
 
-
 \section{图片示例}
 
 在 LaTeX 中插入图片非常简单。以下是一个示例：
 
-\begin{figure}[h] % 使用 [h] 强制图片位置
+\begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.5\textwidth]{Fig/latex.jpg} % 插入图片，宽度为文本宽度的一半
-  \caption{这是一个示例图片}    % 图题
-  \label{latex}          % 图片标签
-  \figsource{资料来源:网络搜素}     %图注
+  \includegraphics[width=0.5\textwidth]{Fig/latex.jpg}
+  \bicaption{这是中文标题}{This is the English title}
+  \label{fig:bilingual}
 \end{figure}
 
-如图 \ref{latex} 所示，这是一个示例图片。
+
+如图 \ref{fig:bilingual} 所示，这是一个示例图片。
 
 
 
@@ -167,7 +179,7 @@ LaTeX 的成功离不开全球用户和开发者的支持。许多宏包和工�
 
 \begin{table}[h] % 使用 [h] 强制表格位置
   \centering
-  \caption{\LaTeX  与 Word 优劣比较} % 表格标题
+    \bicaption{\LaTeX  与 Word 优劣比较}{This is the English title}
   \label{tab:latex-vs-word} % 表格标签
   \begin{tabular}{lcc} % 定义表格列格式（3 列，第一列左对齐，其余居中）
     \toprule % 顶部横线
