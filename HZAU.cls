@@ -200,7 +200,6 @@
     \begin{center}
         \vspace*{-10pt}
         \zihao{3} \textbf{Abstract} \\
-        \vspace{8pt}
     \end{center}
     \zihao{-4} % 设置正文字号
     \setlength{\parindent}{1.25em} % 缩进5个英文字符（1.25em ≈ 5字符）
