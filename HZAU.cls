@@ -147,7 +147,7 @@
 本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得华中农业大学或其他教育机构的学位或证书而使用过的材料，指导教师对此进行了审定。与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明，并表示了谢意。
     } \\
     \multicolumn{4}{|c|}{
-      签名：\underline{\hspace{4cm}} 日期：\underline{\hspace{3cm}}
+      签名：\underline{\raisebox{-0.5ex}{\includegraphics[width=1.5cm]{\authorSignature}}} \quad \quad \quad \quad \quad \quad \quad \quad 日期：\underline{\signatureDate}
     } \\
      \multicolumn{4}{|c|}{}  \\
     \hline
@@ -159,11 +159,11 @@
       \vspace{0.6em}
     } \\
     \multicolumn{4}{|c|}{
-     学位论文作者签名：\underline{\hspace{4cm}} 导师签名：\underline{\hspace{3cm}}
+     学位论文作者签名：\underline{\raisebox{-0.5ex}{\includegraphics[width=1.5cm]{\authorSignature}}} \quad \quad \quad \quad \quad \quad 导师签名：\underline{\raisebox{-0.5ex}{\includegraphics[width=1.5cm]{\mentorSignature}}}
     } \\
         \multicolumn{4}{|c|}{}  \\
         \multicolumn{4}{|c|}{
-     签名日期：\underline{\hspace{4cm}} 签名日期：\underline{\hspace{3cm}}
+     签名日期：\underline{\signatureDate} \quad \quad 签名日期：\underline{\signatureDate}
     } \\
     \hline
   \end{tabular}
@@ -384,7 +384,7 @@
     % 添加 2 个汉字宽度的垂直间距
   
     \centering
-    \includegraphics[width=0.8\textwidth]{HZAU.png}
+    \includegraphics[width=0.8\textwidth]{./Fig/HZAU.png}
     % 插入校徽图片，文件名为 `HZAU.png`
     % \quad \quad \quad
     % 添加一些水平间距
@@ -413,25 +413,24 @@
         \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:\quad \quad \quad}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
         \vspace{-0.2cm}
-        \infobox{ \zihao{-3}\songti{NAME:\quad \quad \quad \quad}}{\yourName}
+        \infobox{ \zihao{-3}\songti{NAME:\quad \quad \quad \quad}}{\yourNameEn}
         % 生成“姓名”信息框，内容为 `\yourName`
 
         \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:\quad \quad  \enskip \enskip}}{\studentID}
         \vspace{-0.2cm}
         % 生成“学号”信息框，内容为 `\studentID`
-
          \infobox{ \zihao{-3}\songti{STUDENT NO.:\;}}{\studentID}
         % 生成“学号”信息框，内容为 `\studentID`
         
         \infobox{ \zihao{-3}\songti{专\hphantom{空白}业:\quad \quad \quad }}{\yourMajor}
         \vspace{-0.2cm}
         % 生成“专业”信息框，内容为 `\yourMajor`
-        \infobox{ \zihao{-3}\songti{MAJOR:\quad \quad \quad \enskip}}{\yourMajor}
+        \infobox{ \zihao{-3}\songti{MAJOR:\quad \quad \quad \enskip}}{\yourMajorEn}
         % 生成“专业”信息框，内容为 `\yourMajor`
         
-        \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:\quad \quad \quad}}{\yourMentor \yourjob}
+        \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:\quad \quad \quad}}{\yourMentor \Mentorjob}
         \vspace{-0.2cm}
-        \infobox{ \zihao{-3}\songti{SUPERVISOR: \enskip}}{\yourMentor \yourjob}
+        \infobox{ \zihao{-3}\songti{SUPERVISOR: \enskip}}{\yourMentorEn~\MentorjobEn}
 
 
         % 生成“专业”信息框，内容为 `\yourMajor`
@@ -449,7 +448,7 @@
 
     \centering \zihao{4} \songti{\yourDateC}
 
-       \centering \zihao{4} \songti{\yourDateE}
+       \centering \zihao{4} \songti{\yourDateEn}
 
   \end{titlepage}
   \nopagecolor % 回复
@@ -521,7 +520,7 @@
         % 生成“专业”信息框，内容为 `\yourMajor`
         
         \infobox{ \mdseries\zihao{-3}\songti{指导教师
-:}}{\yourMentor \yourjob}
+:}}{\yourMentor \Mentorjob}
 
     \end{spacing}
 
