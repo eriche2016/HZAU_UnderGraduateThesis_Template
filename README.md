@@ -32,6 +32,9 @@
    - 在设置选项中找到 `Compiler` 选项
    - **重要：将编译器设置为 `XeLaTeX`**
    - 点击 `Save` 保存设置
+   
+   设置参数参考截图如下：
+![Overleaf Compiler Settings](Fig/setup_on_overleaf.png)  <!-- 请替换为实际的截图链接 -->
 
 4. **开始编写**
    - 打开主文件 `main.tex` 开始编写论文
