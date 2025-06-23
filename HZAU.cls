@@ -1,3 +1,5 @@
+% https://github.com/eriche2016/HZAU_UnderGraduateThesis_Template
+% by Xinwei He (https://eriche2016.github.io/)
 
 \ProvidesClass{HZAU}[2021/02/23 v0.1 Thesis Class of HZAU]
 \NeedsTeXFormat{LaTeX2e}
