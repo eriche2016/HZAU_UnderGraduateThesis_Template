@@ -12,25 +12,22 @@
 \tcbuselibrary{skins} % 加载 skins 库以获得更多样式选项
 \usepackage{multirow}
 
+\usepackage[style=gb7714-2015ay,citestyle=authoryear, bibstyle=numeric, backend=biber]{biblatex}
+\DeclareDelimFormat{nameyeardelim}{\addspace}  % 去掉作者-年份间的逗号
+% 取消标题的引号
+\DeclareFieldFormat[article,inproceedings,incollection,unpublished]{title}{#1}
+\addbibresource{references.bib}  % 替换为你的 .bib 文件名
+% 自定义参考文献标题格式（居中+目录）
+\defbibheading{bibliography}[\centering \heiti \zihao{4} 参考文献]{
+  \section*{#1}  % 居中不编号的标题
+  \addcontentsline{toc}{section}{参考文献}  % 添加到目录
+}
+
+
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
 \definecolor{hzaugreen}{HTML}{67b356} 
-
-\lstdefinelanguage{JavaScript}{
-  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, const},
-  keywordstyle=\color{blue}\bfseries,
-  ndkeywords={class, export, boolean, throw, implements, import, this},
-  ndkeywordstyle=\color{darkgray}\bfseries,
-  identifierstyle=\color{black},
-  sensitive=false,
-  comment=[l]{//},
-  morecomment=[s]{/*}{*/},
-  commentstyle=\color{purple}\ttfamily,
-  stringstyle=\color{red}\ttfamily,
-  morestring=[b]',
-  morestring=[b]"
-}
 
 %%%%%%%%%%%%%%%%
 \usepackage{bicaption} % 支持双标题
@@ -146,187 +143,25 @@ Experiments on four open-set standard datasets such as OS-MN40-core show that th
 \setlength{\parindent}{1.02cm}
 %%%%%%%%%%%%%%%%%%%以下是正文部分%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{引言}
+%% 注意，按照毕设要求，引用文章使用\citep而非cite
+\input{chapters/chapter1} \clearpage
 
-\subsection{研究背景和意义}
-xx 
-\subsection{国内外研究现状}
-xx
-\subsubsection{三维表征学习研究现状}
-xx
-\subsubsection{开放集识别研究现状}
-xx 
+\input{chapters/chapter2} \clearpage
 
-\subsection{研究内容}
+\input{chapters/chapter3} \clearpage
 
-\subsection{论文结构}
+\input{chapters/chapter4} \clearpage
 
-\section{相关理论与关键技术}
+\input{chapters/chapter5} \clearpage
 
-\subsection{三维物体检索}
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\textwidth]{Fig/latex.jpg}
-  \bicaption{这是中文标题}{This is the English title}
-  \label{fig:bilingual}
-\end{figure}
-
-如图 \ref{fig:bilingual} 所示，这是一个示例图片。
-\subsection{视觉大模型}
-
-\subsection{图神经网络}
-
-\section{基于视觉大模型的开放集三维表征学习}
-
-\subsection{概述}
-
-\subsection{研究动机}
-
-\subsection{模型架构设计}
-
-\begin{equation}
-E = mc^2
-\end{equation} 
-其中，m代表物体质量，c代表光速。（注意，其中后面是对公式的总结，不要缩进）
-
-\subsubsection{多模态三维物体嵌入模块}
-
-\subsubsection{结构感知与不变知识学习模块}
-
-\subsection{训练策略}
-
-\subsection{模型更多讨论}
-
-\subsection{本章小结}
-
-\section{实验结果与分析}
-
-\subsection{实验设置}
-
-\subsubsection{实验数据集}
-
-\subsubsection{实验评估指标}
-
-\subsubsection{实现细节}
-
-\subsection{实验结果分析}
-
-
-\subsection{消融实验与讨论}
-
-以下是 \LaTeX 和 Microsoft Word 的优劣比较：
-
-\begin{table}[h] % 使用 [h] 强制表格位置
-  \centering
-    \bicaption{\LaTeX  与 Word 优劣比较}{This is the English title}
-  \label{tab:latex-vs-word} % 表格标签
-  \begin{tabular}{lcc} % 定义表格列格式（3 列，第一列左对齐，其余居中）
-    \toprule % 顶部横线
-    \textbf{比较项} & \textbf{\LaTeX} & \textbf{Word} \\
-    \midrule % 中间横线
-    排版质量 & 高 & 中 \\
-    易用性 & 低 & 高 \\
-    功能与灵活性 & 高 & 中 \\
-    协作与兼容性 & 中 & 高 \\
-    适用场景 & 学术论文、技术文档 & 日常办公、简单文档 \\
-    \bottomrule % 底部横线
-    
-  \end{tabular}
-\end{table}
-      \tablesource{这是表注}
-
-如表 \ref{tab:latex-vs-word} 所示，LaTeX 和 Word 在排版质量、易用性、功能与灵活性、协作与兼容性以及适用场景等方面各有优劣\cite{bai2002kuo}\cite{xu2024lun}。
-
-\subsection{本章小结}
-
-\section{总结与展望}
-
-\subsection{论文工作总结}
-
-\subsection{研究局限性和未来展望}
-
-
-
-
-
-%论文为虚构,仅为展示使用%%%%%%%%%%%%%
-\clearpage\addcontentsline{toc}{section}{参考文献} % 添加到目录
-\bibliography{references} % 加载 .bib 文件
-%%%%%%%%%%%%%%%%不用改动
+\printbibliography[title={\centering 参考文献}]
 
 \nocite{*}      % 显示所有参考文献，即使未被引用,如果你只想引用时显示,请删除
 
 
 %%%%%%附录
-
-\appendix       %开始附录部分
-\phantomsection % 手动添加锚点，确保超链接正确
-
-\section{第一个附录}
-这是附录 A 的内容。
-
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.5\textwidth]{example-image}
-  \caption{示例图片}
-  \label{fig:A1}
-\end{figure}
-
-
-\vspace{2cm}
-\begin{table}[h] % 使用 [h] 强制表格位置
-  \centering
-  \caption{原神角色基础数值比较} % 表格标题
-  \label{tab:genshin} % 表格标签
-  \begin{tabular}{lcccc} % 定义表格列格式（5 列，第一列左对齐，其余居中）
-    \toprule % 顶部横线
-    \textbf{角色} & \textbf{生命值} & \textbf{攻击力} & \textbf{防御力} & \textbf{元素精通} \\
-    \midrule % 中间横线
-    刻晴 & 13103 & 323 & 799 & 96 \\
-    胡桃 & 15552 & 106 & 876 & 0 \\
-    钟离 & 14695 & 251 & 738 & 0 \\
-    \multirow{2}{*}{雷电将军} & 12907 & 337 & 789 & 0 \\ % 合并单元格
-                              & (初始) & (初始) & (初始) & (初始) \\
-    \bottomrule % 底部横线
-  \end{tabular}
-\end{table}
-
-
-
-\section{第二个附录}
-这是附录 B 的内容。
-\begin{equation} \label{eq1}
-\int e^{-x^2} \, dx = \sqrt{\pi}
-\end{equation}
-
-\begin{equation} \label{eq2}
-\frac{d}{dx} \int f(t) \, dt = f(x)
-\end{equation}
-
-\begin{equation} \label{eq3}
-\nabla \cdot (\nabla \times \mathbf{F}) = 0
-\end{equation}
-
-\begin{equation} \label{eq4}
-\det(A) = \prod \lambda_i
-\end{equation}
-
-\begin{equation} \label{eq5}
-A \mathbf{x} = \lambda \mathbf{x}
-\end{equation}
-
-\subsection{测试附录标题}
-
-这是测试部分
-\subsubsection{测试附录标题}
-这里是测试部分
-\paragraph{测试段落标题}
-  这里是测试部分
-
-\subsection{测试附录标题}
-这里是测试部分    
-\subsubsection{测试附录标题}
+%% 根据个人需要是否添加appendix
+\input{chapters/appendix} \clearpage
 
 %%%%%%%%%%%%%%%%%致谢
 \acknowledgement

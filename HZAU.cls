@@ -49,10 +49,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%% 引用格式 %%%%%%%%%%%%%%%%%%%%%%
 
-\RequirePackage{gbt7714}    %用于生成符合中国国家标准 GB/T 7714-2015 的参考文献样式。
-\bibliographystyle{gbt7714-numerical}   %数字顺序制（numerical）
-\setlength{\bibsep}{0.0pt}              %文献条目之间的垂直间距为 0
-\def\bibfont{\zihao{5}}
+
+
 
 % 自定义参考文献标题
 \renewcommand{\refname}{%
