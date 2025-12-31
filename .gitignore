@@ -1,0 +1,12 @@
+main.aux
+main.log
+main.out
+main.toc
+main.pdf
+main.bbl
+*.synctex.gz
+main.fdb_latexmk
+main.bcf
+main.blg
+main.fls
+main.run.xml
