@@ -129,19 +129,19 @@
 \addtocounter{page}{-1} % 将页码计数器减 1
 \begin{table}[h]
   \centering
-  \caption*{\fontsize{16pt}{16pt}\textbf{华中农业大学学位论文独创性声明及使用授权书}}
+  \caption*{\fontsize{16pt}{16pt}\heiti\textbf{华中农业大学学位论文独创性声明及使用授权书}}
   \label{tab:authorization}
   \renewcommand{\arraystretch}{1.8}
-  \setlength{\tabcolsep}{6pt}
+  \setlength{\tabcolsep}{8pt}
   \begin{tabular}{|c|c|c|c|}
     \hline
     \multirow{2}*{\shortstack{学术论文\\是否保密}} & 
-    \multirow{2}*{否/是} & 
+    \multirow{2}*{\qquad 否 \quad} & 
     \multirow{2}*{\shortstack{如需保密，解密时间}} & 
-    \multirow{2}*{年 月 日} \\
+    \multirow{2}*{年 \quad 月 \quad 日} \\
     & & & \\ % 空行实现跨行
     \hline
-    \multicolumn{4}{|c|}{\fontsize{16pt}{16pt}\selectfont\centering\textbf{独创性声明}} \\ % 新增标题行
+    \multicolumn{4}{|c|}{\fontsize{14pt}{14pt}\selectfont\centering\textbf{独创性声明}} \\ % 新增标题行
     \multicolumn{4}{|>{\linespread{1.5}\selectfont}p{\textwidth}|}{ % 设置1.5倍行距
      \hspace{2\ccwd}
 本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得华中农业大学或其他教育机构的学位或证书而使用过的材料，指导教师对此进行了审定。与我一同工作的同志对本研究所做的任何贡献均已在论文中做了明确的说明，并表示了谢意。
@@ -151,11 +151,12 @@
     } \\
      \multicolumn{4}{|c|}{}  \\
     \hline
-        \multicolumn{4}{|c|}{\fontsize{16pt}{16pt}\centering\textbf{学位论文使用授权书}} \\ % 新增标题行
+        \multicolumn{4}{|c|}{\fontsize{14pt}{14pt}\centering\textbf{学位论文使用授权书}} \\ % 新增标题行
     \multicolumn{4}{|>{\linespread{1.5}\selectfont}p{\textwidth}|}{ % 设置1.5倍行距
      \hspace{2\ccwd} \songti
 本人完全了解华中农业大学关于保存、使用学位论文的规定，即学生必须按照学校要求提交学位论文的印刷本和电子版本；学校有权保存提交论文的印刷版和电子版，并提供目录检索和阅览服务，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。本人同意华中农业大学可以用不同方式在不同媒体上发表、传播学位论文的全部或部分内容，为存在馆际合作关系的兄弟高校用户提供文献传递和交换服务，同时本人保留在其他媒体发表论文的权力。
-\textbf{注：保密学位论文（即涉及技术秘密、商业秘密或申请专利等潜在需要提交保密的论文）在解密后适用于本授权书。}
+
+\hspace{2\ccwd}\heiti\textbf{注：保密学位论文（即涉及技术秘密、商业秘密或申请专利等潜在需要提交保密的论文）在解密后适用于本授权书。}
       \vspace{0.6em}
     } \\
     \multicolumn{4}{|c|}{

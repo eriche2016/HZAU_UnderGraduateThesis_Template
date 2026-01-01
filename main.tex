@@ -76,19 +76,32 @@
 % 封面（自动生成）
 \coverpage      %%填写全部信息以确保no warning
 
+%如果你需要印双面,请注意留白
+\newpage
+\thispagestyle{empty}  % 设置空白页不显示页眉页脚
+\mbox{}  % 生成一个空白页
+\newpage
+
 \whitecoverpage      %%填写全部信息以确保no warning
 
 
 
 
 %如果你需要印双面,请注意留白
-%\newpage
-%\thispagestyle{empty}  % 设置空白页不显示页眉页脚
-%\mbox{}  % 生成一个空白页
-%\newpage
+\newpage
+\thispagestyle{empty}  % 设置空白页不显示页眉页脚
+\mbox{}  % 生成一个空白页
+\newpage
+
 \begin{authorization}
 %此处为原创性声明,不用填写.也不用删除
 \end{authorization}
+
+\clearpage  % 强制清空浮动体
+\thispagestyle{empty}
+\hbox{}     % 比 \mbox{} 更底层
+\vspace*{\fill}
+\newpage
 
 % 中文摘要
 \begin{abstract}
