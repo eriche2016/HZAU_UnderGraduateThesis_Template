@@ -229,25 +229,23 @@
 \newcommand{\sectionbreak}{\clearpage} % 每章节清页面
 
 % 一级标题格式
-\titleformat{\section}[block]{\vspace*{-10pt} \zihao{3} \heiti}
+\titleformat{\section}[block]{\vspace*{-10pt} \zihao{3} \heiti \bfseries}
 {\thesection~~}{0pt}{\vspace{8pt}} % 1
 
 % 二级标题格式
-\titleformat{\subsection}{\zihao{-3} \heiti}
+\titleformat{\subsection}{\zihao{-3} \heiti \bfseries}
 {
 \thesubsection~~}{0pt}{}  %1.1
 
 % 三级标题格式
-\titleformat{\subsubsection}{\zihao{4} \heiti}
+\titleformat{\subsubsection}{\zihao{4} \heiti \bfseries}
 {\thesubsubsection~~}{0pt}{}  %1.1.1
 
 % 四级标题格式
-\titleformat{\paragraph}[block]{\zihao{4} \songti} % 使用 [block] 模式
+\titleformat{\paragraph}[block]{\zihao{4} \songti \bfseries} % 使用 [block] 模式
 {\theparagraph~~}{0pt}{}  % 1.1.1.1
 
 \setcounter{secnumdepth}{4} % 设置标题编号深度为 4（包括 paragraph）
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%% 目录样式 %%%%%%%%%%%%%%%%%%%%%%
