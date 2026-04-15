@@ -106,7 +106,7 @@
 % 中文摘要
 \begin{abstract}
 
-TBD 
+请在这里填写你的中文摘要，建议字数在300-500字之间。摘要应简明扼要地介绍研究的背景、目的、方法、结果和结论。请勿包含图表、引用文献或过于专业的术语，以确保摘要的可读性和普适性。
 
 \keywords{三维物体检索；多模态融合；开放集识别；自监督学习；三维表征学习}%填写中文关键词,使用全角分号隔开
 
@@ -117,10 +117,10 @@ TBD
 \addcontentsline{toc}{section}{Abstract}
 %% must add a breaked line below to ensure the indent 
 
-TBD
+Please add your English abstract here.
 
 
-\keywordsEN{\LaTeX ; SCAU Thesis; Typesetting; References; Table of Contents; Figures}  % 英文关键词
+\keywordsEN{3D Object Retrieval; Multi-Modal Fusion; Open-Set Recognition; Self-Supervised Learning; 3D Representation Learning}  % 英文关键词
 
 \end{abstractEN}
 
@@ -160,12 +160,17 @@ TBD
 
 \input{chapters/chapter5} \clearpage
 
-
+%% 参考文献
+%% 如果overleaf编译超时，可按照如下步骤操作：
+%% STEP 1. 先注释掉 \printbibliography 命令，编译一次 
+%% STEP 2. 取消注释 \printbibliography 命令，编译一次
+%% 如果还不成功，可以尝试多次编译，直到参考文献正确显示为止
+%% 或者使用本地编译也行。
 \printbibliography
 
 %%%%%%附录
 %% 根据个人需要是否添加appendix
-\input{chapters/appendix} \clearpage
+%% \input{chapters/appendix} \clearpage
 
 %%%%%%%%%%%%%%%%%致谢
 \acknowledgement
