@@ -6,7 +6,7 @@
 
 ## 特性
 
-- ⚠️ **注意**：本模板目前仅支持VSCode编辑器和LaTeX Workshop插件进行编译。在overleaf上编译可能会遇到问题，建议本地使用VSCode进行编辑和编译。
+- ⚠️ **注意**：推荐使用Overleaf在线编辑器。
 
 - ✅ 符合华中农业大学本科生毕业设计论文格式要求
 - ✅ 完整的封面格式转换
@@ -17,17 +17,13 @@
 ## 使用方法
 
 1. **下载模板**
-   - 访问GitHub仓库：
-       ```
-      git clone git@github.com:eriche2016/HZAU_UnderGraduateThesis_Template.git
-       ```
-   - 或直接下载ZIP文件并解压
-2. **安装LaTeX环境**
-   - 安装VSCode编辑器
-   - 安装LaTeX Workshop插件
-3. **编译模板**
-   - 打开VSCode，加载模板文件夹
-   - 点击编译，会自动下载所需要的库
+
+从github直接下载ZIP文件
+
+2. **上传到Overleaf**
+- 登录Overleaf账号
+- 创建新项目，选择“Upload Project”
+- 上传下载的ZIP文件
 
 4. **开始编写**
    - 打开主文件 `main.tex` 开始编写论文
@@ -46,7 +42,6 @@ HZAU_UnderGraduateThesis_Template/
 │   └── ...                   # 图片资源
 ├── references.bib         # 参考文献文件
 ├── README.md                 # 项目说明文件
-├── latexmkrc                  # LaTeX编译配置文件
 └── HZAU.cls        # 模板类文件
 ```
 ## 技术支持
