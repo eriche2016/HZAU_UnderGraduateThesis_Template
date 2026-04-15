@@ -56,16 +56,16 @@
 \newcommand{\yourMajorEn}{ARTIFICIAL INTELLIGENCE}  %专业
 \newcommand{\yourName}{张三}     %名字
 \newcommand{\yourNameEn}{ZHANGSAN}     %名字
-\newcommand{\yourMentor}{何新卫}        %导师
-\newcommand{\yourMentorEn}{HEXINWEI}        %导师
-\newcommand{\Mentorjob}{副研究员}           %职称
+\newcommand{\yourMentor}{李四}        %导师
+\newcommand{\yourMentorEn}{SI LI}        %导师
+\newcommand{\Mentorjob}{副教授}           %职称
 \newcommand{\MentorjobEn}{ASSOCIATE PROFESSOR}           %职称
-\newcommand{\studentID}{2021317220XX}   %学号
+\newcommand{\studentID}{2022317220XX}   %学号
 \newcommand{\yourDateC}{二〇二五年六月}
-\newcommand{\yourDateEn}{JUNE，2025}
-\newcommand{\yourClass}{人工智能2101}       
+\newcommand{\yourDateEn}{JUNE，2026}
+\newcommand{\yourClass}{人工智能2201}       
 \newcommand{\yourDegree}{工学学士学位}
-\newcommand{\signatureDate}{2025年6月14日}
+\newcommand{\signatureDate}{2026年6月14日}
 %% 记得提交最终版本时找自己导师要签名、以及自己的签名，补上这里的签名！！！
 \newcommand{\authorSignature}{Fig/author_signature.png}
 \newcommand{\mentorSignature}{Fig/mentor_signature.png}
@@ -106,11 +106,8 @@
 % 中文摘要
 \begin{abstract}
 
-随着三维传感与建模技术的快速发展，开放集三维表征学习逐渐成为支撑虚拟现实、智能制造等领域的核心技术。传统方法多基于封闭集假设，但是现实场景需处理动态开放的未知类别。因此，如何构建对未见类的泛化表征，并在多模态融合中提升开放环境鲁棒性，成为当前三维视觉研究的关键问题。开放集三维表征学习旨在构建通用化特征空间，既能区分已知类别，又可自适应扩展至未知物体，同时保障多模态融合的鲁棒性。三维物体检索作为验证表征有效性的典型下游任务，要求模型不仅能识别已知类，还需有效处理未知类别物体，兼顾识别准确率与泛化能力。
+TBD 
 
-为此，本文提出一种融合视觉大模型与多模态结构信息的开放集三维表征学习框架。基于HGM²R模型，保留其对点云和体素的建模能力，同时，引入DINOv2视觉大模型替代原MVCNN模块，以提取高质量多视图语义嵌入。通过冻结DINOv2参数，将其输出的语义嵌入与PointNet、VoxNet提取的几何特征拼接融合，形成统一多模态嵌入。进一步，利用超图神经网络建模样本间高阶结构关系，并设计结构一致性对比损失与记忆锚点对齐机制，优化嵌入空间的判别性与开放性。
-
-在OS-MN40-core等四个开放集标准数据集上的实验表明，本方法在mAP、Recall@100等核心指标上均优于现有方法，尤其在复杂结构分布数据上，DINOv2的语义增强与几何拓扑建模的协同效应显著提升了对未知类的感知能力。消融实验验证了多模态联合学习的必要性。本研究实现了大模型与结构感知机制的协同创新，探索了自监督视觉知识向三维场景迁移的路径，兼具工程可扩展性与理论价值。
 \keywords{三维物体检索；多模态融合；开放集识别；自监督学习；三维表征学习}%填写中文关键词,使用全角分号隔开
 
 \end{abstract}
@@ -120,11 +117,7 @@
 \addcontentsline{toc}{section}{Abstract}
 %% must add a breaked line below to ensure the indent 
 
-Open set 3D representation learning has gradually become the core technology supporting virtual reality, intelligent manufacturing and other fields. Traditional methods are mostly based on the closed set assumption, but real-world scenarios need to deal with dynamically open unknown categories. Therefore, how to construct a generalized representation of unseen classes and improve the robustness of the open environment in multimodal fusion has become a key issue. It aims to construct a generalized feature space, which can not only distinguish known categories, but also adaptively extend to unknown objects, while ensuring the robustness of multimodal fusion. 3D object retrieval requires the model to not only recognize known classes, but also effectively process unknown types of objects, taking into account accuracy and generalization ability.
-
-To this end, this paper proposes an open-set 3D representation learning framework that integrates visual large models and multimodal structure information. Based on the HGM²R model, it retains its modeling capabilities for point clouds and voxels, and at the same time, the DINOv2 visual large model is introduced to replace the original MVCNN module to extract high-quality multi-view semantic embeddings. By freezing the DINOv2 parameters, the output semantic embedding is spliced and fused with the geometric features extracted by PointNet and VoxNet to form a unified multimodal embedding. Furthermore, the supergraph neural network is used to model the higher-order structural relationship between samples, and the structural consistency contrast loss and memory anchor alignment mechanism are designed to optimize the discriminant and openness of the embedded space.
-
-Experiments on four open-set standard datasets such as OS-MN40-core show that the proposed method is superior to the existing methods in core indicators such as mAP and Recall@100, especially in complex structure distribution data, and the synergistic effect of DINOv2's semantic enhancement and geometric topology modeling significantly improves the perception of unknown classes. Ablation experiments verify the necessity of multimodal joint learning. 
+TBD
 
 
 \keywordsEN{\LaTeX ; SCAU Thesis; Typesetting; References; Table of Contents; Figures}  % 英文关键词
@@ -156,7 +149,7 @@ Experiments on four open-set standard datasets such as OS-MN40-core show that th
 \setlength{\parindent}{1.02cm}
 %%%%%%%%%%%%%%%%%%%以下是正文部分%%%%%%%%%%%%%%%%%%%%%%%
 
-%% 注意，按照毕设要求，引用文章使用\citep而非cite
+
 \input{chapters/chapter1} \clearpage
 
 \input{chapters/chapter2} \clearpage
@@ -167,10 +160,8 @@ Experiments on four open-set standard datasets such as OS-MN40-core show that th
 
 \input{chapters/chapter5} \clearpage
 
-\printbibliography[title={\centering 参考文献}]
 
-\nocite{*}      % 显示所有参考文献，即使未被引用,如果你只想引用时显示,请删除
-
+\printbibliography
 
 %%%%%%附录
 %% 根据个人需要是否添加appendix
@@ -181,34 +172,21 @@ Experiments on four open-set standard datasets such as OS-MN40-core show that th
 
 本科学习的四年，是我人生中极为重要的阶段。值此毕业论文完成之际，我怀着无比感激的心情，向所有在学习和生活中给予我关怀、指导和帮助的人致以诚挚的谢意。
 
-首先，衷心感谢我的论文指导老师——何新卫老师。老师不仅在选题、研究方法、论文结构等方面给予我极大的支持，更在整个写作过程中以严谨的治学态度、深入的专业素养和细致耐心的指导为我树立了榜样。从文献梳理到实验设计，从语言表达到逻辑推演，老师始终给予我耐心点拨，使我在科研能力、写作规范和独立思考方面都有了显著提升。
+首先，衷心感谢我的论文指导老师——XX老师。[Please add xxxx]。
 
-其次，感谢学院的各位任课老师，是你们系统、扎实的课程教学、是你们的悉心讲授和无私分享，使我在本科阶段打下了坚实的理论基础，拓展了专业视野，培养了严谨的思维方式和问题意识，也让我对人工智能领域产生了浓厚兴趣，为本课题的研究提供了有力支撑。
+其次，感谢学院的各位任课老师，[Please add xxxx]。
 
-我还要特别感谢我的家人，是你们始终如一的理解、包容与支持，给予我稳定的后盾和精神的鼓励，让我能够安心学习，顺利完成本科学业和毕业论文。
+我还要特别感谢我的家人，[Please add xxxx]。
 
-感谢我的室友和朋友们，是你们让我的整个大学生活不只是学习，还有欢笑和陪伴。每一个深夜抱怨写不出论文、模型又跑崩了的时刻，是你们陪我“摆烂”也拉我重启；有时候，一个寝室灯都没关，大家“秉烛夜战”的样子，早已成了我最宝贵的青春记忆。
-
-也感谢那些在路上遇到的陌生人，比如论坛上解答过我问题的网友，开源社区中那些无私共享的代码作者，是你们让我明白科研不仅是一种能力，也是一种传承与分享的精神。
-
-这一切琐碎、鸡零狗碎又真切的经历，共同组成了我这一段难忘的毕业旅程。毕业并不是终点，而是另一个起点。感谢所有出现在我大学生活中的人和事，愿我们在各自的人生轨道上，都能勇敢、自由地奔跑。
+感谢我的室友和朋友们，[Please add xxxx]。
 
 
-\hfill Jun, 2025 
+[Please add xxxx]。
+
+
+\hfill Jun, 2026 
 
 \hfill 张三
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \end{document}

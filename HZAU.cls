@@ -189,7 +189,11 @@
 } { \clearpage }
 
 
-\newcommand{\keywords}[1]{\newline\newline\newline\noindent\heiti{关键词：}\songti\zihao{-4} #1}
+
+\newcommand{\keywords}[1]{%
+  \vspace{3\baselineskip}% 3 blank lines
+  \noindent\heiti{关键词：}\songti\zihao{-4} #1
+}
 
 
 
