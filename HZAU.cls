@@ -652,8 +652,6 @@
   \renewcommand{\theequation}{\Alph{section}-\arabic{equation}}
 }
 
-  \vspace{-1cm}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%致谢%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 定义致谢内容格式
