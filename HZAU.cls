@@ -21,8 +21,7 @@
   inner=3.2cm,outer=2.5cm,top=2.5cm,bottom=2.5cm,%页面设置：页边距上下左右各用2.5cm。
   headheight=1.5cm,   % 页眉高度
   headsep=0.5cm,      % 页眉与正文之间的距离
-  footskip=1.75cm,]{geometry}
-\setlength{\headsep}{0.6cm}
+  footskip=10mm,]{geometry}
 
 \RequirePackage{amsthm,amsmath,amssymb,indentfirst,booktabs,multicol,multirow,xcolor,graphicx,fancyhdr,hologo,array,hyperref}
 
@@ -80,9 +79,8 @@
 \DeclareCaptionLabelSeparator{onespace}{~~} % 图号与图题之间空1个字距
 % 设置图题格式
 \captionsetup[figure]{
-  labelsep=onespace, % 使用自定义分隔符 onespace
-  font=small, % 图题字体为小号
-  justification=centering % 图题居中
+  labelsep=onespace,
+  justification=centering
 }
 
 % 设置图注格式
@@ -177,6 +175,8 @@
 % 中文摘要命令
 \renewenvironment{abstract} {
 \clearpage \phantomsection
+\pagenumbering{roman}
+\setcounter{page}{1}
 \begin{center}
 \vspace*{-10pt}
     \zihao{3} \heiti 摘 \qquad 要 % 标题中间空4个字距
@@ -303,10 +303,6 @@
   \end{spacing}
 
   \clearpage
-
-
-  \pagenumbering{arabic}
-  \setcounter{page}{1}
 }
 
 \newcommand{\nonumsection}[1]{
@@ -656,8 +652,6 @@
   \renewcommand{\theequation}{\Alph{section}-\arabic{equation}}
 }
 
-  \vspace{-1cm}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%致谢%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 定义致谢内容格式
@@ -682,7 +676,7 @@
 % 设置脚注格式
 \usepackage{footmisc}
 \renewcommand{\footnotelayout}{%
-  \fontsize{9}{1}\selectfont % 小五号字体，行距为 11pt（单倍行距）
+  \fontsize{9}{11}\selectfont % 小五号字体，行距为 11pt（单倍行距）
   \setlength{\parindent}{0pt} % 无缩进
   \setlength{\parskip}{0pt} % 段前0行，段后0行
   \justifying % 两端对齐

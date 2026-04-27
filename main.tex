@@ -1,6 +1,6 @@
 %使用XeLaTex或者LualaLaTex编译
 
-\documentclass[UTF8,AutoFakeBold=1,AutoFakeSlant,zihao=-4]{HZAU}
+\documentclass[UTF8,twoside,AutoFakeBold=1,AutoFakeSlant,zihao=-4]{HZAU}
 \usepackage{graphicx} % 用于插入图片
 \usepackage{setspace} % 用于设置行距
 \usepackage{ctex} % 支持中文字体和字号设置
@@ -39,10 +39,6 @@
 \captionsetup[table][bi-first]{name=表} % 中文"表"代替"Table"
 \captionsetup[table][bi-second]{name=Table}
 
-% 让 figure 编号按 section 分级（格式：Figure 1-1, 1-2, ...）
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
-\numberwithin{equation}{section} 
 
 %%%%%%%%%%%%%%%请在这里填写你的论文题目
 \newcommand{\thesisTitleC}{基于视觉大模型的开放集三维表征学习}
@@ -63,6 +59,7 @@
 \newcommand{\studentID}{2022317220XX}   %学号
 \newcommand{\yourDateC}{二〇二五年六月}
 \newcommand{\yourDateEn}{JUNE，2026}
+\newcommand{\gradYearNum}{2025}   % 届次年份（阿拉伯数字），用于偶数页页眉
 \newcommand{\yourClass}{人工智能2201}       
 \newcommand{\yourDegree}{工学学士学位}
 \newcommand{\signatureDate}{2026年6月14日}
@@ -103,7 +100,10 @@
 \vspace*{\fill}
 \newpage
 
-% 中文摘要
+% 目录（自动生成）——规范要求：目录在摘要之前
+\contentpage
+
+% 中文摘要（页码自动切换为小写罗马数字）
 \begin{abstract}
 
 请在这里填写你的中文摘要，建议字数在300-500字之间。摘要应简明扼要地介绍研究的背景、目的、方法、结果和结论。请勿包含图表、引用文献或过于专业的术语，以确保摘要的可读性和普适性。
@@ -113,9 +113,9 @@
 \end{abstract}
 
 \begin{abstractEN}
-%% add enligh abstract to table of contents
+%% add English abstract to table of contents
 \addcontentsline{toc}{section}{Abstract}
-%% must add a breaked line below to ensure the indent 
+%% must add a breaked line below to ensure the indent
 
 Please add your English abstract here.
 
@@ -125,28 +125,24 @@ Please add your English abstract here.
 \end{abstractEN}
 
 
-% 目录（自动生成）,不用修改
-\contentpage
-
-
 %%% 设置页眉
 %%
 % 正文开始
 \pagestyle{fancy}
 % 正文从第一页开始计算页码
+\pagenumbering{arabic}
 \setcounter{page}{1}
 % 页眉和页脚（页码）的格式设定
 \fancyhf{}
-\fancyhead[C]{\fontsize{10.5pt}{10.5pt}\selectfont{华中农业大学2025届学士学位毕业论文}}
+\fancyhead[CO]{\fontsize{10.5pt}{10.5pt}\selectfont{\thesisTitleC}}
+\fancyhead[CE]{\fontsize{10.5pt}{10.5pt}\selectfont{华中农业大学\gradYearNum 届学士学位毕业论文}}
 \fancyfoot[C]{\fontsize{9pt}{9pt}\selectfont{\thepage}}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% 正文 22 磅的行距，段前段后间距为 0
+% 段前段后间距为 0，行距与 cls 保持一致（linespread 1.5）
 \setlength{\parskip}{0em}
-\renewcommand{\baselinestretch}{1.53}
-% 正文首行悬挂 1.02cm
-\setlength{\parindent}{1.02cm}
+\setlength{\parindent}{2\ccwd}
 %%%%%%%%%%%%%%%%%%%以下是正文部分%%%%%%%%%%%%%%%%%%%%%%%
 
 
