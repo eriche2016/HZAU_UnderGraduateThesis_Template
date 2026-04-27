@@ -26,7 +26,6 @@
 \RequirePackage{amsthm,amsmath,amssymb,indentfirst,booktabs,multicol,multirow,xcolor,graphicx,fancyhdr,hologo,array,hyperref}
 
 % 设置目录与引用的超链接（需要编译多次）
-\RequirePackage{hyperref}
 \hypersetup{
   pdfborder={0 0 0},
   colorlinks=false,linkcolor={blue},urlcolor={blue},filecolor={blue},citecolor={blue},
@@ -66,7 +65,6 @@
 
 \renewcommand{\captionfont}{\songti\zihao{5}}
 
-\usepackage{booktabs} % 用于美化表格
 \usepackage{float} % 用于控制表格位置
 % 设置表注格式
 \newcommand{\tablesource}[1]{%
@@ -74,9 +72,6 @@
   \parbox{\linewidth}{\songti\zihao{-5}\linespread{1.5}\selectfont #1} % 表注字体为宋体，小五号，1.5倍行距
 }
 
-% 设置图题格式
-\renewcommand{\figurename}{图} % 图编号前缀
-\DeclareCaptionLabelSeparator{onespace}{~~} % 图号与图题之间空1个字距
 % 设置图题格式
 \captionsetup[figure]{
   labelsep=onespace,
@@ -548,7 +543,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%% 编程语言语法高亮支持 %%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{color}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
@@ -619,7 +613,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%附录设定%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 定义附录格式
-\RequirePackage{hyperref}
 \renewcommand{\appendix}{%
   \par
   \setcounter{section}{0} % 重置章节计数器
@@ -664,7 +657,6 @@
   \setlength{\parindent}{2em} % 首行缩进2字距
   \setstretch{1.5} % 1.5倍行距
   \zihao{-4} % 小四号
-  \setstretch{1.5} % 1.5倍行距
   \setlength{\parskip}{2pt} % 段落间距为 0
 
 
