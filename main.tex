@@ -1,0 +1,193 @@
+%使用XeLaTex或者LualaLaTex编译
+
+\documentclass[UTF8,twoside,AutoFakeBold=1,AutoFakeSlant,zihao=-4]{HZAU}
+\usepackage{graphicx} % 用于插入图片
+\usepackage{setspace} % 用于设置行距
+\usepackage{ctex} % 支持中文字体和字号设置
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[absolute, overlay]{textpos}
+\usepackage{tcolorbox} % 用于创建带边框的盒子
+\usepackage{fancyhdr}
+\tcbuselibrary{skins} % 加载 skins 库以获得更多样式选项
+\usepackage{multirow}
+
+\usepackage[style=gb7714-2015ay,citestyle=authoryear, bibstyle=numeric, backend=biber]{biblatex}
+\DeclareDelimFormat{nameyeardelim}{\addspace}  % 去掉作者-年份间的逗号
+% 取消标题的引号
+\DeclareFieldFormat[article,inproceedings,incollection,unpublished]{title}{#1}
+\addbibresource{references.bib}  % 替换为你的 .bib 文件名
+% 自定义参考文献标题格式（居中+目录）
+\defbibheading{bibliography}[\centering \heiti \zihao{4} 参考文献]{
+  \section*{#1}  % 居中不编号的标题
+  \addcontentsline{toc}{section}{参考文献}  % 添加到目录
+}
+
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+\definecolor{hzaugreen}{HTML}{67b356} 
+
+%%%%%%%%%%%%%%%%
+\usepackage{bicaption} % 支持双标题
+% 设置中英文标题分隔符（默认为换行）
+\DeclareCaptionOption{separator}{\def\captionseparator{#1}}
+\captionsetup[bi-first]{name=图} % 中文"图"代替"Figure"
+\captionsetup[bi-second]{name=Figure}
+% 设置表格中英文标题格式
+\captionsetup[table][bi-first]{name=表} % 中文"表"代替"Table"
+\captionsetup[table][bi-second]{name=Table}
+
+
+%%%%%%%%%%%%%%%请在这里填写你的论文题目
+\newcommand{\thesisTitleC}{基于视觉大模型的开放集三维表征学习}
+
+\newcommand{\thesisTitleE}{Open-Set 3D Representation Learning Based on Large Vision Models}
+
+%====================================================
+%%%%%%%%%%%%%%请在这里填写你的个人信息
+%====================================================
+\newcommand{\yourMajor}{人工智能}  %专业
+\newcommand{\yourMajorEn}{ARTIFICIAL INTELLIGENCE}  %专业
+\newcommand{\yourName}{张三}     %名字
+\newcommand{\yourNameEn}{ZHANGSAN}     %名字
+\newcommand{\yourMentor}{李四}        %导师
+\newcommand{\yourMentorEn}{SI LI}        %导师
+\newcommand{\Mentorjob}{副教授}           %职称
+\newcommand{\MentorjobEn}{ASSOCIATE PROFESSOR}           %职称
+\newcommand{\studentID}{2022317220XX}   %学号
+\newcommand{\yourDateC}{二〇二五年六月}
+\newcommand{\yourDateEn}{JUNE，2026}
+\newcommand{\gradYearNum}{2025}   % 届次年份（阿拉伯数字），用于偶数页页眉
+\newcommand{\yourClass}{人工智能2201}       
+\newcommand{\yourDegree}{工学学士学位}
+\newcommand{\signatureDate}{2026年6月14日}
+%% 记得提交最终版本时找自己导师要签名、以及自己的签名，补上这里的签名！！！
+\newcommand{\authorSignature}{Fig/author_signature.png}
+\newcommand{\mentorSignature}{Fig/mentor_signature.png}
+%====================================================
+
+\begin{document}
+
+% 封面（自动生成）
+\coverpage      %%填写全部信息以确保no warning
+
+%如果你需要印双面,请注意留白
+\newpage
+\thispagestyle{empty}  % 设置空白页不显示页眉页脚
+\mbox{}  % 生成一个空白页
+\newpage
+
+\whitecoverpage      %%填写全部信息以确保no warning
+
+
+
+
+%如果你需要印双面,请注意留白
+\newpage
+\thispagestyle{empty}  % 设置空白页不显示页眉页脚
+\mbox{}  % 生成一个空白页
+\newpage
+
+\begin{authorization}
+%此处为原创性声明,不用填写.也不用删除
+\end{authorization}
+
+\clearpage  % 强制清空浮动体
+\thispagestyle{empty}
+\hbox{}     % 比 \mbox{} 更底层
+\vspace*{\fill}
+\newpage
+
+% 目录（自动生成）——规范要求：目录在摘要之前
+\contentpage
+
+% 中文摘要（页码自动切换为小写罗马数字）
+\begin{abstract}
+
+请在这里填写你的中文摘要，建议字数在300-500字之间。摘要应简明扼要地介绍研究的背景、目的、方法、结果和结论。请勿包含图表、引用文献或过于专业的术语，以确保摘要的可读性和普适性。
+
+\keywords{三维物体检索；多模态融合；开放集识别；自监督学习；三维表征学习}%填写中文关键词,使用全角分号隔开
+
+\end{abstract}
+
+\begin{abstractEN}
+%% add English abstract to table of contents
+\addcontentsline{toc}{section}{Abstract}
+%% must add a breaked line below to ensure the indent
+
+Please add your English abstract here.
+
+
+\keywordsEN{3D Object Retrieval; Multi-Modal Fusion; Open-Set Recognition; Self-Supervised Learning; 3D Representation Learning}  % 英文关键词
+
+\end{abstractEN}
+
+
+%%% 设置页眉
+%%
+% 正文开始
+\pagestyle{fancy}
+% 正文从第一页开始计算页码
+\pagenumbering{arabic}
+\setcounter{page}{1}
+% 页眉和页脚（页码）的格式设定
+\fancyhf{}
+\fancyhead[CO]{\fontsize{10.5pt}{10.5pt}\selectfont{\thesisTitleC}}
+\fancyhead[CE]{\fontsize{10.5pt}{10.5pt}\selectfont{华中农业大学\gradYearNum 届学士学位毕业论文}}
+\fancyfoot[C]{\fontsize{9pt}{9pt}\selectfont{\thepage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 段前段后间距为 0，行距与 cls 保持一致（linespread 1.5）
+\setlength{\parskip}{0em}
+\setlength{\parindent}{2\ccwd}
+%%%%%%%%%%%%%%%%%%%以下是正文部分%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{chapters/chapter1} \clearpage
+
+\input{chapters/chapter2} \clearpage
+
+\input{chapters/chapter3} \clearpage
+
+\input{chapters/chapter4} \clearpage
+
+\input{chapters/chapter5} \clearpage
+
+%% 参考文献
+%% 如果overleaf编译超时，可按照如下步骤操作：
+%% STEP 1. 先注释掉 \printbibliography 命令，编译一次 
+%% STEP 2. 取消注释 \printbibliography 命令，编译一次
+%% 如果还不成功，可以尝试多次编译，直到参考文献正确显示为止
+%% 或者使用本地编译也行。
+\printbibliography
+
+%%%%%%附录
+%% 根据个人需要是否添加appendix
+%% \input{chapters/appendix} \clearpage
+
+%%%%%%%%%%%%%%%%%致谢
+\acknowledgement
+
+本科学习的四年，是我人生中极为重要的阶段。值此毕业论文完成之际，我怀着无比感激的心情，向所有在学习和生活中给予我关怀、指导和帮助的人致以诚挚的谢意。
+
+首先，衷心感谢我的论文指导老师——XX老师。[Please add xxxx]。
+
+其次，感谢学院的各位任课老师，[Please add xxxx]。
+
+我还要特别感谢我的家人，[Please add xxxx]。
+
+感谢我的室友和朋友们，[Please add xxxx]。
+
+
+[Please add xxxx]。
+
+
+\hfill Jun, 2026 
+
+\hfill 张三
+
+
+\end{document}

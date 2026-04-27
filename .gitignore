@@ -1,0 +1,18 @@
+# LaTeX 编译产物
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.toc
+*.xdv
+*.pdf
+*.synctex.gz
+
+# 个人签名图片（请自行添加，不提交到版本库）
+Fig/author_signature.png
+Fig/mentor_signature.png
