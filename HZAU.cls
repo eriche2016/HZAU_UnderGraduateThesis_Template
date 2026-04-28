@@ -59,11 +59,16 @@
 \renewcommand\tablename{表}
 
 \RequirePackage{caption}
+\RequirePackage{longtable}
+\RequirePackage{subcaption}
 \DeclareCaptionLabelSeparator{onespace}{~~}
 \captionsetup[table]{skip=8pt,labelsep=onespace,justification=centering}
 \captionsetup[figure]{skip=8pt,labelsep=onespace}
+\captionsetup[longtable]{skip=8pt,labelsep=onespace,justification=centering}
 
 \renewcommand{\captionfont}{\songti\zihao{5}}
+\captionsetup[subfigure]{labelformat=simple,labelsep=space}
+\renewcommand{\thesubfigure}{(\alph{subfigure})}
 
 \usepackage{float} % 用于控制表格位置
 % 设置表注格式
@@ -78,6 +83,11 @@
   justification=centering
 }
 
+% \longtablecontinued{列数} —— 在 longtable 续页表头区块使用，输出"续表 N"
+\newcommand{\longtablecontinued}[1]{%
+  \multicolumn{#1}{l}{\songti\zihao{5}续表~\thetable}\\%
+}
+
 % 设置图注格式
 \newcommand{\figsource}[1]{%
   \vspace{4pt} % 图题与图注之间的间距
@@ -87,6 +97,21 @@
 
 % 设置插图与正文之间的间距
 \setlength{\intextsep}{12pt} % 插图与正文之间上下各空一行
+
+%%%%%%%%%%%%%%%%%%%%%% 算法/伪代码 %%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage[ruled,linesnumbered]{algorithm2e}
+% 中文化关键词
+\SetKwInput{KwIn}{输入}
+\SetKwInput{KwOut}{输出}
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{end if}
+\SetKwFor{For}{for}{do}{end for}
+\SetKwFor{While}{while}{do}{end while}
+\SetKw{Return}{return}
+\SetKw{Break}{break}
+% 标题字体与图表题一致（五号宋体）
+\SetAlCapFnt{\songti\zihao{5}}
+\SetAlCapNameFnt{\songti\zihao{5}}
 
 
 %%%%%%%%%%%%%%%%%%%%%% code style %%%%%%%%%%%%%%%%%%%%%%
@@ -213,6 +238,29 @@
     \par\vspace{1cm} % 使用 \par 确保前一个段落结束，再加空距
     \noindent\textbf{Key words: } #1%
     \clearpage % 在关键词之后换页
+}
+
+%%%%%%%%%%%%%%%%%%%%%% 缩略语表 %%%%%%%%%%%%%%%%%%%%%%
+
+% \abbr{缩略语}{原文} —— 在 abbreviations 环境内使用，每行一条
+\newcommand{\abbr}[2]{%
+  \textbf{#1} & #2 \\[4pt]%
+}
+
+\newenvironment{abbreviations}{%
+  \clearpage\phantomsection
+  \addcontentsline{toc}{section}{缩略语表}
+  \begin{center}
+    \vspace*{-10pt}
+    \zihao{3}\heiti 缩\quad 略\quad 语\quad 表
+    \vspace{8pt}
+  \end{center}
+  \zihao{-4}
+  \noindent
+  \begin{tabular}{@{}p{3.5cm}p{\dimexpr\linewidth-3.5cm-2\tabcolsep\relax}@{}}
+}{%
+  \end{tabular}
+  \clearpage
 }
 
 %%%%%%%%%%%%%%%%%%%%%% 章节标题样式 %%%%%%%%%%%%%%%%%%%%%%

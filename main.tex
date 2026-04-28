@@ -10,7 +10,7 @@
 \usepackage{fancyhdr}
 \tcbuselibrary{skins} % 加载 skins 库以获得更多样式选项
 
-\usepackage[style=gb7714-2015ay,citestyle=authoryear, bibstyle=numeric, backend=biber]{biblatex}
+\usepackage[style=gb7714-2015ay, backend=biber]{biblatex}
 \DeclareDelimFormat{nameyeardelim}{\addspace}  % 去掉作者-年份间的逗号
 % 取消标题的引号
 \DeclareFieldFormat[article,inproceedings,incollection,unpublished]{title}{#1}
@@ -19,8 +19,8 @@
 \defbibheading{bibliography}[参考文献]{%
   \clearpage\phantomsection
   \addcontentsline{toc}{section}{参考文献}%
-  \makebox[\textwidth][c]{\heiti\zihao{4}参\hspace{1em}考\hspace{1em}文\hspace{1em}献}%
-  \vspace{-2em}%
+  \makebox[\textwidth][c]{\heiti\zihao{4}参\hspace{1em}考\hspace{1em}文\hspace{1em}献}\par%
+  \vspace{0.5em}%
 }
 
 
@@ -38,6 +38,9 @@
 % 设置表格中英文标题格式
 \captionsetup[table][bi-first]{name=表} % 中文"表"代替"Table"
 \captionsetup[table][bi-second]{name=Table}
+% 设置 longtable 中英文标题格式
+\captionsetup[longtable][bi-first]{name=表}
+\captionsetup[longtable][bi-second]{name=Table}
 
 
 %%%%%%%%%%%%%%%请在这里填写你的论文题目
@@ -57,9 +60,9 @@
 \newcommand{\Mentorjob}{副教授}           %职称
 \newcommand{\MentorjobEn}{ASSOCIATE PROFESSOR}           %职称
 \newcommand{\studentID}{2022317220XX}   %学号
-\newcommand{\yourDateC}{二〇二五年六月}
+\newcommand{\yourDateC}{二〇二六年六月}
 \newcommand{\yourDateEn}{JUNE，2026}
-\newcommand{\gradYearNum}{2025}   % 届次年份（阿拉伯数字），用于偶数页页眉
+\newcommand{\gradYearNum}{2026}   % 届次年份（阿拉伯数字），用于偶数页页眉
 \newcommand{\yourClass}{人工智能2201}       
 \newcommand{\yourDegree}{工学学士学位}
 \newcommand{\signatureDate}{2026年6月14日}
@@ -124,6 +127,11 @@ Please add your English abstract here.
 
 \end{abstractEN}
 
+% 如需缩略语表（规范§6："如有必要"），取消下方注释并填写内容
+% \begin{abbreviations}
+%   \abbr{CNN}{Convolutional Neural Network，卷积神经网络}
+%   \abbr{LSTM}{Long Short-Term Memory，长短期记忆网络}
+% \end{abbreviations}
 
 %%% 设置页眉
 %%
@@ -135,7 +143,7 @@ Please add your English abstract here.
 % 页眉和页脚（页码）的格式设定
 \fancyhf{}
 \fancyhead[CO]{\fontsize{10.5pt}{10.5pt}\selectfont{\thesisTitleC}}
-\fancyhead[CE]{\fontsize{10.5pt}{10.5pt}\selectfont{华中农业大学\gradYearNum 届学士学位毕业论文}}
+\fancyhead[CE]{\fontsize{10.5pt}{10.5pt}\selectfont{华中农业大学\gradYearNum 届学士学位（毕业）论文}}
 \fancyfoot[C]{\fontsize{9pt}{9pt}\selectfont{\thepage}}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -144,7 +152,8 @@ Please add your English abstract here.
 \setlength{\parskip}{0em}
 \setlength{\parindent}{2\ccwd}
 %%%%%%%%%%%%%%%%%%%以下是正文部分%%%%%%%%%%%%%%%%%%%%%%%
-
+% 【排版提醒】定稿前请通读 PDF，手动检查孤行（段落首行单独留在页底）
+% 和孤尾（段落末行单独落在下一页），通过微调措辞或断句消除。
 
 \input{chapters/chapter1} \clearpage
 

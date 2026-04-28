@@ -82,6 +82,31 @@
   \item 骨骼分支：基于图卷积网络（GCN）提取结构特征
   \item IMU 分支：基于 LSTM 提取时序动态特征
 \end{itemize}
+
+% ============================================================
+% subfigure 用法示例（多子图并排，含 (a)(b) 子标题）
+% 用法：复制下方代码，将图片路径和标题替换为实际内容
+% 此处用同一张占位图重复演示语法，实际使用时换成不同图片
+% ============================================================
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/HZAU.png}
+    \caption{子图标题 (a)}
+    \label{fig:sub-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/HZAU.png}
+    \caption{子图标题 (b)}
+    \label{fig:sub-b}
+  \end{subfigure}
+  \caption{子图示例（实际使用时替换图片路径与标题）}
+  \label{fig:subfig-demo}
+\end{figure}
+% ============================================================
 \subsection{跨模态注意力融合}\label{3-2-跨模态注意力融合}
 
 设三路特征分别为 $\mathbf{f}_v \in \mathbb{R}^{512}$、$\mathbf{f}_s \in \mathbb{R}^{256}$、$\mathbf{f}_a \in \mathbb{R}^{128}$，经线性投影统一到 $d=256$ 维后，注意力融合计算如下：
@@ -94,6 +119,30 @@
 
 其中权重 $\{\alpha_i\}$ 由 Softmax 归一化的打分函数给出。
 
+
+% ============================================================
+% algorithm2e 用法示例（算法伪代码）
+% 用法：复制下方代码，替换算法名称、输入输出和步骤内容
+% ============================================================
+\begin{algorithm}[H]
+  \caption{示例算法（实际使用时替换为论文中的算法）}
+  \label{alg:demo}
+  \KwIn{数据集 $\mathcal{D}$，学习率 $\eta$，最大轮数 $T$}
+  \KwOut{模型参数 $\theta$}
+  初始化参数 $\theta_0$\;
+  \For{$t = 1$ \KwTo $T$}{
+    \For{每个批次 $(x, y) \in \mathcal{D}$}{
+      计算损失 $\mathcal{L}(\theta; x, y)$\;
+      计算梯度 $g \leftarrow \nabla_\theta \mathcal{L}$\;
+      更新参数 $\theta \leftarrow \theta - \eta \cdot g$\;
+    }
+    \If{验证集损失不再下降}{
+      \Break\;
+    }
+  }
+  \Return $\theta$\;
+\end{algorithm}
+% ============================================================
 
 \subsection{损失函数}\label{3-3-损失函数}
 
@@ -159,6 +208,35 @@ RGB only & 0.862 & — \\
 \end{tabular}
 \end{adjustbox}
 \end{table}
+
+% ============================================================
+% longtable 用法示例（跨页长表格，自动生成"续表 N"标题）
+% 注意：longtable 不能嵌套在 table 浮动环境中，直接写在正文里
+% 用法：复制下方代码，修改列格式、列数（\longtablecontinued{列数}）和内容
+% ============================================================
+\begin{longtable}{lcccc}
+  % ---- 首页：表题 + 表头 ----
+  \caption{跨页长表格示例}\label{tab:longtable-demo} \\
+  \toprule
+  \textbf{方法} & \textbf{精确率} & \textbf{召回率} & \textbf{$F_1$} & \textbf{准确率} \\
+  \midrule
+  \endfirsthead
+  % ---- 续页：续表标题 + 表头（列数与上方保持一致）----
+  \longtablecontinued{5} % 此处填写列数
+  \toprule
+  \textbf{方法} & \textbf{精确率} & \textbf{召回率} & \textbf{$F_1$} & \textbf{准确率} \\
+  \midrule
+  \endhead
+  % ---- 最后一页底线 ----
+  \bottomrule
+  \endlastfoot
+  % ---- 数据行 ----
+  CNN-LSTM          & 0.871 & 0.853 & 0.862 & 0.889 \\
+  ST-GCN            & 0.884 & 0.876 & 0.880 & 0.901 \\
+  IMU-only          & 0.862 & 0.841 & 0.851 & 0.878 \\
+  \textbf{本文方法} & \textbf{0.931} & \textbf{0.915} & \textbf{0.923} & \textbf{0.941} \\
+\end{longtable}
+% ============================================================
 
 \section{总结与展望}\label{第5章-总结与展望}
 

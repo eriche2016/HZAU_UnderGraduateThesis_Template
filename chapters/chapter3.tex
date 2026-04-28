@@ -1,5 +1,5 @@
 \section{基于视觉大模型的开放集三维表征学习}
-DINOV2~\parencite{oquab2024dinov2}是一种自监督视觉大模型。
+DINOV2 是一种自监督视觉大模型\parencite{ref5,ref6}。
 \subsection{概述}
 
 \subsection{研究动机}
@@ -14,6 +14,28 @@ E = mc^2
 \subsubsection{多模态三维物体嵌入模块}
 
 \subsubsection{结构感知与不变知识学习模块}
+
+% ============================================================
+% algorithm2e 用法示例，实际使用时直接复制并替换内容
+% ============================================================
+\begin{algorithm}[H]
+  \caption{示例算法（实际使用时替换为论文中的算法）}
+  \label{alg:demo}
+  \KwIn{数据集 $\mathcal{D}$，学习率 $\eta$，最大轮数 $T$}
+  \KwOut{模型参数 $\theta$}
+  初始化参数 $\theta_0$\;
+  \For{$t = 1$ \KwTo $T$}{
+    \For{每个批次 $(x, y) \in \mathcal{D}$}{
+      计算损失 $\mathcal{L}(\theta; x, y)$\;
+      计算梯度 $g \leftarrow \nabla_\theta \mathcal{L}$\;
+      更新参数 $\theta \leftarrow \theta - \eta \cdot g$\;
+    }
+    \If{验证集损失不再下降}{
+      \Break\;
+    }
+  }
+  \Return $\theta$\;
+\end{algorithm}
 
 \subsection{训练策略}
 

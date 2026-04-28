@@ -11,6 +11,50 @@
 \subsection{实验结果分析}
 
 
+% ============================================================
+% subfigure 用法示例（多子图并排）
+% ============================================================
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/HZAU.png}
+    \caption{子图标题 (a)}
+    \label{fig:sub-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{Fig/HZAU.png}
+    \caption{子图标题 (b)}
+    \label{fig:sub-b}
+  \end{subfigure}
+  \bicaption{子图示例（实际使用时替换图片路径与标题）}{Example of Subfigures (Replace with Your Own)}
+  \label{fig:subfig-demo}
+\end{figure}
+
+% ============================================================
+% longtable 用法示例（跨页长表格，需要时取消注释使用）
+% 注意：longtable 内部不支持 \bicaption，请使用普通 \caption
+% \begin{longtable}{lcccc}
+%   \caption{跨页长表格示例}\label{tab:longtable-demo} \\
+%   \toprule
+%   \textbf{方法} & \textbf{精确率} & \textbf{召回率} & \textbf{$F_1$} & \textbf{准确率} \\
+%   \midrule
+%   \endfirsthead
+%   \longtablecontinued{5} % 此处填写列数
+%   \toprule
+%   \textbf{方法} & \textbf{精确率} & \textbf{召回率} & \textbf{$F_1$} & \textbf{准确率} \\
+%   \midrule
+%   \endhead
+%   \bottomrule
+%   \endlastfoot
+%   方法 A & 0.871 & 0.853 & 0.862 & 0.889 \\
+%   方法 B & 0.884 & 0.876 & 0.880 & 0.901 \\
+%   \textbf{本文方法} & \textbf{0.931} & \textbf{0.915} & \textbf{0.923} & \textbf{0.941} \\
+% \end{longtable}
+% ============================================================
+
 \subsection{消融实验与讨论}
 
 以下是 \LaTeX 和 Microsoft Word 的优劣比较：
@@ -34,6 +78,5 @@
 \end{table}
       \tablesource{这是表注}
 
-如表 \ref{tab:latex-vs-word} 所示，LaTeX 和 Word 在排版质量、易用性、功能与灵活性、协作与兼容性以及适用场景等方面各有优劣\cite{bai2002kuo}\cite{xu2024lun}。
 
 \subsection{本章小结}
