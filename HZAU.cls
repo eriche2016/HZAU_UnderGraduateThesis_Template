@@ -699,9 +699,12 @@
 
 % 定义致谢内容格式
 \newenvironment{acknowledgement}{%
-  \clearpage\addcontentsline{toc}{section}{致\quad 谢} % 将“致谢”加入目录
-  \section*{致~~~~~~~~谢} % 添加致谢标题
-  \vspace{1em}
+  \clearpage\addcontentsline{toc}{section}{致\quad 谢}
+  \begin{center}
+    \vspace*{-10pt}
+    \zihao{3}\heiti 致\hspace{2em}谢
+    \vspace{8pt}
+  \end{center}
   \setlength{\parindent}{2em} % 首行缩进2字距
   \setstretch{1.5} % 1.5倍行距
   \zihao{-4} % 小四号
