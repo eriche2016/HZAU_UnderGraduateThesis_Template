@@ -35,6 +35,7 @@
 %%%%%%%%%%%%%%%%%%%%%% 字体与段落 %%%%%%%%%%%%%%%%%%%%%%
 
 \PassOptionsToPackage{no-math}{fontspec}
+\PassOptionsToPackage{AutoFakeBold=3}{xeCJK}
 \RequirePackage[UTF8,scheme=plain]{ctex}
 \setmainfont{Times New Roman}       %西文字体默认
 
@@ -729,3 +730,6 @@
 
 % 确保脚注全文连续编号
 \setcounter{footnote}{0} % 重置脚注计数器
+
+% 脚注标记格式：右上角"1）"（规范§8.2）
+\renewcommand{\thefootnote}{\arabic{footnote}）}

@@ -10,6 +10,10 @@
 \usepackage{fancyhdr}
 \tcbuselibrary{skins} % 加载 skins 库以获得更多样式选项
 
+% 【参考文献排序提醒】规范§7.5要求"中文文献在前、外文文献在后"。
+% 如需自动实现此顺序，请为每条中文bib条目添加 langid = {chinese}，
+% 然后在下方 biblatex 选项中加入 sorting=none 并手动维护顺序；
+% 或者将中文文献统一放在 .bib 文件开头、设置 sorting=none。
 \usepackage[style=gb7714-2015ay, backend=biber]{biblatex}
 \DeclareDelimFormat{nameyeardelim}{\addspace}  % 去掉作者-年份间的逗号
 % 取消标题的引号
@@ -195,7 +199,7 @@ Please add your English abstract here.
 [Please add xxxx]。
 
 
-\hfill Jun, 2026 
+\hfill Jun, 2026
 
 \hfill 张三
 
