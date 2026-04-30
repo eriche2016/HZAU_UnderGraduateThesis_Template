@@ -227,12 +227,14 @@
 % 英文摘要环境
 
 \newenvironment{abstractEN}{
-    \clearpage 
+    \clearpage
     \phantomsection
     \begin{center}
         \vspace*{-10pt}
-        \zihao{3} \textbf{Abstract} \\
+        \zihao{3} \textbf{Abstract}
+        \vspace{8pt}
     \end{center}
+    \addcontentsline{toc}{section}{Abstract}
     \zihao{-4} % 设置正文字号
     \setlength{\parindent}{1.25em} % 缩进5个英文字符（1.25em ≈ 5字符）
     \noindent % 防止首行额外缩进
