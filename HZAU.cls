@@ -99,6 +99,12 @@
 % 设置插图与正文之间的间距
 \setlength{\intextsep}{12pt} % 插图与正文之间上下各空一行
 
+%%%%%%%%%%%%%%%%%%%%%% 列表（enumerate / itemize） %%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{enumitem}
+% 紧凑列表间距，规范§2.2 "统一行间距"
+\setlist{topsep=0pt, partopsep=0pt, itemsep=0.2\baselineskip, parsep=0pt}
+
 %%%%%%%%%%%%%%%%%%%%%% 算法/伪代码 %%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[ruled,linesnumbered]{algorithm2e}
@@ -212,7 +218,7 @@
 
 
 \newcommand{\keywords}[1]{%
-  \vspace{3\baselineskip}% 3 blank lines
+  \par\vspace{\baselineskip}% 规范§5：另起一行，留一行视觉分隔
   \noindent\heiti{关键词：}\songti\zihao{-4} #1
 }
 
@@ -236,7 +242,7 @@
 
 % 英文关键词命令
 \newcommand{\keywordsEN}[1]{%
-    \par\vspace{1cm} % 使用 \par 确保前一个段落结束，再加空距
+    \par\vspace{\baselineskip}% 规范§5：另起一行，留一行视觉分隔
     \noindent\textbf{Key words: } #1%
     \clearpage % 在关键词之后换页
 }
@@ -278,16 +284,18 @@
 
 % 一级标题格式
 \titleformat{\section}[block]{\vspace*{-10pt} \zihao{3} \heiti \bfseries}
-{\thesection~~}{0pt}{\vspace{8pt}} % 1
+{\thesection~~}{0pt}{} % 1
+\titlespacing*{\section}{0pt}{0pt}{\baselineskip} % 已 clearpage 在新页顶；标题后留 1 行
 
 % 二级标题格式
 \titleformat{\subsection}{\zihao{-3} \heiti \bfseries}
-{
-\thesubsection~~}{0pt}{}  %1.1
+{\thesubsection~~}{0pt}{}  %1.1
+\titlespacing*{\subsection}{0pt}{\baselineskip}{0.5\baselineskip}
 
 % 三级标题格式
 \titleformat{\subsubsection}{\zihao{4} \heiti \bfseries}
 {\thesubsubsection~~}{0pt}{}  %1.1.1
+\titlespacing*{\subsubsection}{0pt}{0.5\baselineskip}{0.5\baselineskip}
 
 % 四级标题格式
 \titleformat{\paragraph}[block]{\zihao{4} \songti \bfseries} % 使用 [block] 模式
