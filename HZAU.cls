@@ -680,10 +680,10 @@
   % 只修改一级标题的格式
   \renewcommand{\thesection}{附录\ \Alph{section}}
   
-  % 子标题保持原有的数字格式
-  \renewcommand{\thesubsection}{\arabic{subsection}}
-  \renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection}}
-  \renewcommand{\theparagraph}{\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+  % 子标题带附录字母前缀（规范§3：统一编号方法 A→A.1→A.1.1→A.1.1.1）
+  \renewcommand{\thesubsection}{\Alph{section}.\arabic{subsection}}
+  \renewcommand{\thesubsubsection}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}}
+  \renewcommand{\theparagraph}{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
   
   % 为每个附录节添加超链接锚点
   \titleformat{\section}[block]
