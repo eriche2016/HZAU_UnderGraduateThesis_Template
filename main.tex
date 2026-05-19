@@ -16,6 +16,21 @@
 % 或者将中文文献统一放在 .bib 文件开头、设置 sorting=none。
 \usepackage[style=gb7714-2015ay, backend=biber]{biblatex}
 \DeclareDelimFormat[cite,parencite,pagescite,citep]{nameyeardelim}{\addspace}  % 去掉作者-年份间的逗号（覆盖 gb7714-2015ay 的硬编码）
+\setlength{\bibhang}{0pt}
+\newcounter{bibitemnum}
+\defbibenvironment{bibliography}
+  {\list
+     {\arabic{bibitemnum}.\ }
+     {\usecounter{bibitemnum}%
+      \setlength{\labelwidth}{0pt}%
+      \setlength{\labelsep}{0pt}%
+      \setlength{\leftmargin}{0pt}%
+      \setlength{\itemindent}{2em}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}%
+   \renewcommand*{\makelabel}[1]{##1}}
+  {\endlist}
+  {\item}
 % 取消标题的引号
 \DeclareFieldFormat[article,inproceedings,incollection,unpublished]{title}{#1}
 \addbibresource{references.bib}  % 替换为你的 .bib 文件名

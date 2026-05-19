@@ -391,6 +391,9 @@
 \newcommand{\infobox}[2]{
     \hspace{2.4cm}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{1pt}{\makebox[8cm][c]{#2}}}}
 }
+\newcommand{\coverinfobox}[2]{
+    \hspace{\dimexpr 2.4cm - 3em\relax}\heiti\zihao{-2}\textbf{\selectfont{#1~\dunderline{1pt}{\makebox[\dimexpr 8cm + 3em\relax][c]{#2}}}}
+}
 \newcommand{\dualinfobox}[4]{%
     \hspace{2.4cm} % 左侧缩进
     \begin{tabular}{@{}l@{}} % 无左边距，左对齐
@@ -465,27 +468,27 @@
   
  % 设置行距为 1.5 倍
     
-        \infobox{ \zihao{-3}\songti{姓\hphantom{空白}名:\quad \quad \quad}}{\yourName}
+        \hspace*{-1.8em}\coverinfobox{ \zihao{-3}\songti{姓\hphantom{空白}名:\quad \quad  \enskip \enskip}}{\yourName}
         % 生成“姓名”信息框，内容为 `\yourName`
         \vspace{-0.2cm}
-        \infobox{ \zihao{-3}\songti{NAME:\quad \quad \quad \quad}}{\yourNameEn}
+        \coverinfobox{ \zihao{-3}\songti{NAME:\quad \quad \quad \quad}}{\yourNameEn}
         % 生成“姓名”信息框，内容为 `\yourName`
 
-        \infobox{ \zihao{-3}\songti{学\hphantom{空白}号:\quad \quad  \enskip \enskip}}{\studentID}
+        \coverinfobox{ \zihao{-3}\songti{学\hphantom{空白}号:\quad \quad  \enskip \enskip}}{\studentID}
         \vspace{-0.2cm}
         % 生成“学号”信息框，内容为 `\studentID`
-         \infobox{ \zihao{-3}\songti{STUDENT NO.:\;}}{\studentID}
+         \coverinfobox{ \zihao{-3}\songti{STUDENT NO.:\;}}{\studentID}
         % 生成“学号”信息框，内容为 `\studentID`
-        
-        \infobox{ \zihao{-3}\songti{专\hphantom{空白}业:\quad \quad \quad }}{\yourMajor}
+
+        \coverinfobox{ \zihao{-3}\songti{专\hphantom{空白}业:\quad \quad \quad }}{\yourMajor}
         \vspace{-0.2cm}
         % 生成“专业”信息框，内容为 `\yourMajor`
-        \infobox{ \zihao{-3}\songti{MAJOR:\quad \quad \quad \enskip}}{\yourMajorEn}
+        \coverinfobox{ \zihao{-3}\songti{MAJOR:\quad \quad \quad \enskip}}{\yourMajorEn}
         % 生成“专业”信息框，内容为 `\yourMajor`
-        
-        \infobox{ \zihao{-3}\songti{导\hphantom{空白}师:\quad \quad \quad}}{\yourMentor \Mentorjob}
+
+        \coverinfobox{ \zihao{-3}\songti{导\hphantom{空白}师:\quad \quad \quad}}{\yourMentor \Mentorjob}
         \vspace{-0.2cm}
-        \infobox{ \zihao{-3}\songti{SUPERVISOR: \enskip}}{\yourMentorEn~\MentorjobEn}
+        \coverinfobox{ \zihao{-3}\songti{SUPERVISOR: \enskip}}{\yourMentorEn~\MentorjobEn}
 
 
         % 生成“专业”信息框，内容为 `\yourMajor`

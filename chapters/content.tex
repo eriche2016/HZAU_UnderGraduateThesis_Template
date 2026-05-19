@@ -50,9 +50,9 @@
 注意力机制（Attention Mechanism）最早由 Bahdanau 等人\cite{ref6}在神经机器翻译中提出，其核心思想是对输入序列中不同位置赋予不同权重。对于多模态融合，注意力权重可形式化为：
 
 
-\[
+\begin{equation}
 \alpha\_i = \frac{\exp(e\_i)}{\sum\_{j=1}^{M} \exp(e\_j)}, \quad e\_i = f(h\_i)
-\]
+\end{equation}
 
 
 其中 $M$ 为模态数量，$h_i$ 为第 $i$ 个模态的特征向量，$f(\cdot)$ 为打分函数。
@@ -112,9 +112,9 @@
 设三路特征分别为 $\mathbf{f}_v \in \mathbb{R}^{512}$、$\mathbf{f}_s \in \mathbb{R}^{256}$、$\mathbf{f}_a \in \mathbb{R}^{128}$，经线性投影统一到 $d=256$ 维后，注意力融合计算如下：
 
 
-\[
+\begin{equation}
 \mathbf{f}\_{fused} = \sum\_{i \in \{v,s,a\}} \alpha\_i \cdot \mathbf{W}\_i \mathbf{f}\_i
-\]
+\end{equation}
 
 
 其中权重 $\{\alpha_i\}$ 由 Softmax 归一化的打分函数给出。
@@ -149,9 +149,9 @@
 训练采用带类别权重的二分类交叉熵损失：
 
 
-\[
+\begin{equation}
 \mathcal{L} = -\sum\_{n} \left[ w\_1 y\_n \log \hat{y}\_n + w\_0 (1-y\_n) \log(1-\hat{y}\_n) \right]
-\]
+\end{equation}
 
 
 \section{实验结果}\label{第4章-实验结果}
